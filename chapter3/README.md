@@ -11,3 +11,5 @@
 3-6 Skipped because randomly generating a char data type and dynamically creating an array are not covered in this chapter. Randomly generate the cipher array from problem 3-4 with no duplicate entries.
 
 3-7 write a program that finds the mode from an array integers.
+
+3-8 edit the student array program so that it shows the lower median and upper quartiles to see what grades are required to be place in the 25%, 50% and 75% range of the class.

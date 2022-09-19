@@ -21,9 +21,17 @@ int main(){
 	for(int i = 0; i < A; i++){
 		for(int j = 0; j < M; j++){
 			 if(agent_sales[A][M] != -1){
-          N++;
-       }
+          			N++;
+       			 }
 		}
+		int current_agent[N];
+		int i = 0;
+		for(int j = 0; j < M; j++){
+			if(agent_sales[A][M] != -1){
+				current_agent[i++] = agent_sales[A][M];
+			}
+		}
+		//wrote valid sales data into current_agent
 		
   }
 	cout << "\nafter...\n";

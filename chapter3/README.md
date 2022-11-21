@@ -13,3 +13,5 @@
 3-7 write a program that finds the mode from an array integers.
 
 3-8 edit the student array program so that it shows the lower median and upper quartiles to see what grades are required to be place in the 25%, 50% and 75% range of the class.
+
+3-9 update sales array code so that it can handle entries that are -1 for months employees we're not working.

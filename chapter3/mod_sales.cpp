@@ -9,7 +9,7 @@ int main(){
 	const int M = 12; //Months;
 	int largest_median = 0;
 	int current_median = 0;
-  int N = 0; //size of array after filtering out -1s.
+        int N = 0; //size of array after filtering out -1s.
 
 	int agent_sales[A][M] = {
 					{1856, 498, 30924, 87478, 328, 2653, 387, 3754, 38758, 2873, 276, 32},
@@ -17,36 +17,32 @@ int main(){
 					{23, 55, 67, 99, 265, 376, 232, 223, 4546, 564, 4544, 3434}
 				};
 
-	cout << "before sorting...\n";
+	//loop through array counting number of valid entries.
 	for(int i = 0; i < A; i++){
 		for(int j = 0; j < M; j++){
-			 if(agent_sales[A][M] != -1){
+			 if(agent_sales[i][j] != -1){
           			N++;
        			 }
 		}
-		int current_agent[N];
-		int i = 0;
-		for(int j = 0; j < M; j++){
-			if(agent_sales[A][M] != -1){
-				current_agent[i++] = agent_sales[A][M];
-			}
-		}
-		//wrote valid sales data into current_agent
-		
-  }
-	cout << "\nafter...\n";
-	qsort(agent_sales, 12, sizeof(int), compare);
-	for(int i = 0; i < A; i++){
-		for(int j = 0; j < M; j++){
-			 cout << agent_sales[i][j] <<  ' ';
-		}
-		cout << '\n';
 	}
-	
-	cout << '\n';
-
+	//make an array to story N number of valid entries and store them.
+	int current_agent[N];
 	for(int i = 0; i < A; i++){
-		current_median = median(agent_sales[i], M);
+		for(int j = 0; j < M; j++){
+			if(agent_sales[i][j] != -1){
+          			current_agent[j] = agent_sales[i][j];
+       			}
+		}
+	}	
+	//sort entries and print.
+	qsort(current_agent, N, sizeof(int), compare);
+	for(int i = 0; i < N; i++){
+		cout << current_agent[i];
+	}
+	cout << '\n';
+	//find the largest median.
+	for(int i = 0; i < N; i++){
+		current_median = median(current_agent[i], N);
 		if(current_median > largest_median){
 			largest_median = current_median;
 		}
